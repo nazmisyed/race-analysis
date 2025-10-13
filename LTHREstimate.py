@@ -296,7 +296,7 @@ def main():
                         
                         # Create and display the plot
                         fig = create_heart_rate_plot(df, zones, lthr)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width='stretch')
                     
                     # Data summary
                     st.subheader("📋 Data Summary")
@@ -370,7 +370,7 @@ def main():
                         )
                         
                         st.write("**Training Zones Preview:**")
-                        st.dataframe(zones_df, use_container_width=True)
+                        st.dataframe(zones_df, width='stretch')
                     
                     with tab2:
                         st.write("**Select data fields to include in export:**")
@@ -471,7 +471,7 @@ def main():
                             
                             # Show preview of selected data
                             st.write("**Preview of selected data:**")
-                            st.dataframe(export_df.head(10), use_container_width=True)
+                            st.dataframe(export_df.head(10), width='stretch')
                             
                         else:
                             st.warning("Please select at least one field to export.")
@@ -503,11 +503,11 @@ def main():
                             })
                         
                         field_stats_df = pd.DataFrame(field_stats)
-                        st.dataframe(field_stats_df, use_container_width=True)
+                        st.dataframe(field_stats_df, width='stretch')
                         
                         # Show sample data
                         st.write("**Sample Data (first 10 records):**")
-                        st.dataframe(df.head(10), use_container_width=True)
+                        st.dataframe(df.head(10), width='stretch')
                     
                     # Clear progress indicators
                     progress_bar.empty()
